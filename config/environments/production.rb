@@ -87,6 +87,9 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
+  #following kitt instructions
+  config.action_mailer.default_url_options = { host: 'https://game-vault-bf1201b12002.herokuapp.com/' }
+
   # Enable DNS rebinding protection and other `Host` header attacks.
   # config.hosts = [
   #   "example.com",     # Allow requests from example.com
