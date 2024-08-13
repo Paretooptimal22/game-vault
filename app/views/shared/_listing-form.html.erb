@@ -1,0 +1,5 @@
+<%= simple_form_for @listing do |f| %>
+  <%= f.input :price %>
+  <%= f.association :games %>
+  <%= f.button :submit %>
+<% end %>
