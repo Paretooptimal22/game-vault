@@ -1,0 +1,28 @@
+$font-family-primary: "Mukta", sans-serif;
+$font-family-logo: "Mooli", cursive;
+$font-family-secondary: 'Croissant One', cursive;
+$color-primary: #2f9e44;
+$color-secondary: #fff;
+$color-accent: #8ce99a;
+$color-text-light: #ddd;
+$color-text-dark: #394353;
+$color-text-muted: #5e728f;
+$color-text-muted-light: #889cb9;
+$box-shadow-light: 0 1rem 4rem rgba(75, 119, 221, 0.15);
+$box-shadow-heavy: 0 1rem 10rem rgba(130, 162, 235, 0.6);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+a {
+  text-decoration: none;
+}
