@@ -10,22 +10,22 @@
   justify-content: space-between;
   align-items: center;
   transition: all 0.3s;
-  background-color: #fff;
+  background-color: #000;
 
   a {
     text-decoration: none;
   }
+
   .logo {
     display: flex;
     flex-direction: column;
 
     span:nth-child(1) {
-      font-family: "Mooli", cursive;
+      font-family: $font-family-logo;
       font-size: 3rem;
       font-weight: bold;
       text-transform: uppercase;
-      // color: #fff;
-      color: #000;
+      color: $color-secondary;
     }
 
     span:nth-child(1) span {
@@ -36,10 +36,9 @@
 
     span:nth-child(2) {
       display: inline-block;
-      font-family: 'Croissant One', cursive;
+      font-family: $font-family-secondary;
       font-size: 1.5rem;
-      // color: #ddd;
-      color: #000;
+      color: #ddd;
       letter-spacing: .1rem;
       text-align: right;
       transform: translate(2.2rem, -1rem);
@@ -47,14 +46,14 @@
   }
 }
 
-.navigation .sticky {
+.navigation.sticky {
   height: 8rem;
-  background-color: #fff;
+  background-color: $color-secondary;
   /* box-shadow: 0 1rem 10rem rgba(130, 162, 235, 0.6); */
 }
 
-.sticky .logo span {
-  color: #092627;
+.navigation.sticky .logo span {
+  color: #000;
   text-shadow: none;
 }
 
@@ -78,8 +77,7 @@
 .navigation-link {
   font-size: 2rem;
   text-transform: uppercase;
-  // color: #fff;
-  color: #000;
+  color: $color-secondary;
   letter-spacing: 0.1rem;
   /* text-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); */
   text-decoration: none;
@@ -110,13 +108,13 @@
 }
 
 .sticky .navigation-btn {
-  background-color: #2f9e44;
-  /* background: linear-gradient(to right, #8ce99a, #2f9e44); */
+  background-color: $color-primary;
+  /* background: linear-gradient(to right, $color-accent, $color-primary); */
   /* box-shadow: none; */
-  color: #fff;
+  color: $color-secondary;
   transition: all 0.3s;
 }
 
 .sticky .navigation-btn:hover {
-  background-color: #8ce99a;
+  background-color: $color-accent;
 }
