@@ -1,0 +1,16 @@
+.dropdown {
+  position: absolute;
+  top: 4.9rem;
+  background-color: $color-secondary;
+  border-radius: 1rem;
+  box-shadow: 0 1rem 3rem rgba(0,0,0,0.2);
+  padding: 2rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+
+  &.sticky {
+    top: 8rem;
+    box-shadow: 0 1rem 10rem rgba(130, 162, 235, 0.4);
+  }
+}

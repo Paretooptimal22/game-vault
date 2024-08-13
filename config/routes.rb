@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "lists#index"
+  root to: "pages#home"
 
   resources :users, only: [:new, :create, :edit, :update]
   resources :listings, except: [:edit, :update] do

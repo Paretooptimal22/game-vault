@@ -1,38 +1,53 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
-    <% end %>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item dropdown">
-          <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
-          </a>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-            </div>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
-        <% end %>
-      </ul>
+<nav data-controller="navbar" data-navbar-target="navigation" class="navigation">
+  <!-- Logo -->
+  <a href="#">
+    <div class="logo">
+      <span>Game<span>Vault</span></span>
+      <span>Rent & Rent Out Video Games</span>
     </div>
-  </div>
-</div>
+  </a>
+  <!-- Nav Items -->
+  <ul class="navigation-items">
+    <li class="navigation-item"><a href="#" class="navigation-link">Home</a></li>
+    <li class="navigation-item"><a href="#" class="navigation-link">Browse Games</a></li>
+    <li class="navigation-item"><a href="#" class="navigation-link">My Rentals</a></li>
+    <li class="navigation-item"><a href="#" class="navigation-link">Rent Out</a></li>
+    <li class="navigation-item"><a href="#" class="navigation-link">Contact</a>
+      <div class="drop-down drop-down-5">
+        <div class="contact-options">
+          <div>
+            <i class="fa-solid fa-envelope"></i>
+            <span>Get in Touch</span>
+          </div>
+
+          <div>
+            <i class="fa-solid fa-comments"></i>
+            <span>Chat with Sales</span>
+          </div>
+
+          <div>
+            <i class="fa-solid fa-user"></i>
+            <span>Accounts & Bills</span>
+           </div>
+
+            <div>
+              <i class="fa-solid fa-wrench"></i>
+              <span>Technical Support</span>
+            </div>
+
+            <div>
+              <i class="fa-solid fa-people-group"></i>
+              <span>Ask the Community</span>
+            </div>
+
+            <div>
+              <i class="fa-solid fa-file-lines"></i>
+              <span>Documentation</span>
+            </div>
+
+          </div>
+        </div>
+     </li>
+     <li class="navigation-btn"><a href="#" class="navigation-link">Account</a></li>
+   </ul>
+</nav>
