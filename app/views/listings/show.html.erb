@@ -5,11 +5,12 @@
     <h2><%= @listing.game.name %></h2>
   </div>
 
-  <div class="card-product">
+  <div class="card-product mt-3">
     <div>
       <img src=<%= @listing.game.cover %> class="img-thum bnail" alt="game cover">
     </div>
-    <div>
+    <div class="ms-3">
+      <h3><%= (@listing.game.name) %></h3>
       <p>Price: ¥<%= (@listing.price).round(2) %></p>
       <p>Age rating: <%= @listing.game.age_rating %></p>
       <p>Game Rating: <%= (@listing.game.aggregate_rating).round(0) %></p>
@@ -50,7 +51,8 @@
   <br>
   <div class="card-product">
     <br>
-    <h4>Buy Form</h4>
+    <h4>Rent This Game</h4>
+    <%= render 'listings/form' %>
     <br>
   </div>
 </div>
