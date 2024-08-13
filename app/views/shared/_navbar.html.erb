@@ -1,53 +1,17 @@
 <nav data-controller="navbar" data-navbar-target="navigation" class="navigation">
   <!-- Logo -->
-  <a href="#">
+  <%= link_to root_path do %>
     <div class="logo">
       <span>Game<span>Vault</span></span>
       <span>Rent & Rent Out Video Games</span>
     </div>
-  </a>
+  <% end %>
   <!-- Nav Items -->
   <ul class="navigation-items">
-    <li class="navigation-item"><a href="#" class="navigation-link">Home</a></li>
-    <li class="navigation-item"><a href="#" class="navigation-link">Browse Games</a></li>
-    <li class="navigation-item"><a href="#" class="navigation-link">My Rentals</a></li>
-    <li class="navigation-item"><a href="#" class="navigation-link">Rent Out</a></li>
-    <li class="navigation-item"><a href="#" class="navigation-link">Contact</a>
-      <div class="drop-down drop-down-5">
-        <div class="contact-options">
-          <div>
-            <i class="fa-solid fa-envelope"></i>
-            <span>Get in Touch</span>
-          </div>
-
-          <div>
-            <i class="fa-solid fa-comments"></i>
-            <span>Chat with Sales</span>
-          </div>
-
-          <div>
-            <i class="fa-solid fa-user"></i>
-            <span>Accounts & Bills</span>
-           </div>
-
-            <div>
-              <i class="fa-solid fa-wrench"></i>
-              <span>Technical Support</span>
-            </div>
-
-            <div>
-              <i class="fa-solid fa-people-group"></i>
-              <span>Ask the Community</span>
-            </div>
-
-            <div>
-              <i class="fa-solid fa-file-lines"></i>
-              <span>Documentation</span>
-            </div>
-
-          </div>
-        </div>
-     </li>
-     <li class="navigation-btn"><a href="#" class="navigation-link">Account</a></li>
+    <li class="navigation-item"><%= link_to "Home", root_path, class: "navigation-link" %></li>
+    <li class="navigation-item"><%= link_to "Browse Games", listings_path, class: "navigation-link" %></li>
+    <li class="navigation-item"><%= link_to "My Rentals", listings_path, class: "navigation-link" %></li>
+    <li class="navigation-item"><%= link_to "Rent Out", new_listing_path, class: "navigation-link" %></li>
+    <li class="navigation-btn"><%= link_to "Account", new_user_session_path, class: "navigation-link" %></li>
    </ul>
 </nav>
