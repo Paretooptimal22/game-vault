@@ -7,5 +7,5 @@ Rails.application.routes.draw do
     resources :rentals, only: [:create]
   end
 
-  resources :rentals, only: [:update, :destroy]
+  resources :rentals, only: [:index, :update, :destroy]
 end
