@@ -24,16 +24,28 @@
   <div class="card-product">
     <br>
     <h4>Seller</h4>
-    <p>name: <%= @listing.user.name %></p>
-    <p>rating: <% (@listing.user.rating).times do %>
-      <i class="fas fa-star"></i>
-      <% end %>
-      <% (5 - @listing.user.rating).times do %>
-        <i class="far fa-star"></i>
-      <% end %>
-    </p>
-    <br>
+      <%# <%= @listing.user_id.cla %>
+      <p>name: <%= @listing.user.name %></p>
+      <p>rating: <% (@listing.user.rating).times do %>
+        <i class="fas fa-star"></i>
+        <% end %>
+        <% (5 - @listing.user.rating).times do %>
+          <i class="far fa-star"></i>
+        <% end %>
+      </p>
+
   </div>
+
+  <!--
+      <p>name: <%= @listing.user.name %></p>
+      <p>rating: <% (@listing.user.rating).times do %>
+        <i class="fas fa-star"></i>
+        <% end %>
+        <% (5 - @listing.user.rating).times do %>
+          <i class="far fa-star"></i>
+        <% end %>
+      </p>
+ -->
 
   <br>
   <div class="card-product">

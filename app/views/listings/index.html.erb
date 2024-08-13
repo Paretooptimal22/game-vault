@@ -4,11 +4,13 @@
     <% @listings.each do |listing| %>
       <li class="list-group-item col-12">
         <div class="card-product">
+
           <%= image_tag listing.game.cover %>
           <div class="card-product-infos">
             <h2><%= listing.game.name %></h2>
             <p> <%= listing.game.genres %> <strong><%= listing.game.aggregate_rating %></strong></p>
           </div>
+          <%= link_to '', listing_path(listing) , class: 'card-product-info-link' %>
         </div>
       </li>
     <% end %>

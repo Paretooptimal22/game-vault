@@ -13,6 +13,7 @@
 @import "components/index";
 @import "pages/index";
 
+
 .card-product {
   overflow: hidden;
   // height: 120px;
@@ -20,6 +21,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .card-product img {
@@ -44,4 +46,23 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+  position: relative;
+}
+
+.card-product-info-link:hover {
+  position: absolute;
+  background: #76B900;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%
+}
+
+.card-product-info-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%
 }
