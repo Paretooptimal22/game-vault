@@ -1,0 +1,44 @@
+<div>
+  <div>
+    <h1>Pages#show</h1>
+    <br>
+    <h2><%= @listing.game.name %></h2>
+  </div>
+
+  <div class="card-product">
+    <div>
+      <img src=<%= @listing.game.cover %> class="img-thum bnail" alt="game cover">
+    </div>
+    <div>
+      <p>Price: ¥<%= (@listing.price).round(2) %></p>
+      <p>Age rating: <%= @listing.game.age_rating %></p>
+      <p>Game Rating: <%= (@listing.game.aggregate_rating).round(0) %></p>
+      <p>Genres: <%= @listing.game.genres %></p>
+      <p>Platforms: <%= @listing.game.platforms %></p>
+      <p>Website  <a href="<%= @listing.game.website %>">link</a></p>
+    </div>
+    <br>
+  </div>
+
+  <br>
+  <div class="card-product">
+    <br>
+    <h4>Seller</h4>
+    <p>name: <%= @listing.user.name %></p>
+    <p>rating: <% (@listing.user.rating).times do %>
+      <i class="fas fa-star"></i>
+      <% end %>
+      <% (5 - @listing.user.rating).times do %>
+        <i class="far fa-star"></i>
+      <% end %>
+    </p>
+    <br>
+  </div>
+
+  <br>
+  <div class="card-product">
+    <br>
+    <h4>Buy Form</h4>
+    <br>
+  </div>
+</div>
