@@ -1,8 +1,8 @@
 .show-container{
   display: flex;
 }
-
-.card-product {
+// change class names
+.card-listing {
   overflow: hidden;
   height: auto;
   width: 55%;
@@ -19,7 +19,7 @@
   box-shadow: 2px 2px 2px rgb(179, 179, 179);
 }
 
-.card-product-seller{
+.card-listing-seller{
   height: auto;
   width: 35%;
   font-family: $font-family-primary;
@@ -30,13 +30,12 @@
   flex-direction: column;
   align-items: center;
   flex-grow: 2;
-  // column-gap: 25px;
   border-radius: 1.5px;
   box-shadow: 2px 2px 2px rgb(179, 179, 179);
+  padding: 7rem;
 }
 
-
-.card-product img {
+.card-listing img {
 
   height: 100%;
   width: 350px;
@@ -44,13 +43,14 @@
   border-radius: 3px;
 }
 
-.card-product h2 {
+.card-listing h2 {
+  color: black;
   font-size: 46px;
   font-weight: bold;
   margin: 0;
 }
 
-.card-product p {
+.card-listing p {
   font-size: 16px;
   line-height: 1.4;
   opacity: .7;

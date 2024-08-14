@@ -1,0 +1,22 @@
+.card-product .card-product-infos {
+  padding: 16px;
+  position: relative;
+}
+
+.card-product-info-link:hover {
+  position: absolute;
+  background: #76B900;
+  opacity: 0.3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%
+}
+
+.card-product-info-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%
+}
