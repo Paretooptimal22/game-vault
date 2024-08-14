@@ -30,7 +30,8 @@
         <% @rentals.reverse.each do |rental| %>
           <li class="d-flex justify-content-between list-group-item">
             <div class="list-left">
-              <%= rental.end_date %>
+              <strong>Due:</strong> <%= rental.end_date %>
+              <strong>Total: ￥</strong> <%= rental.listing.price.round(2) %>
             </div>
             <div class="list-right">
               <%= link_to rental.listing.game.name, listing_path(rental.listing) %>
