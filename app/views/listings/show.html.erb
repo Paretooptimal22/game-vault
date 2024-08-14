@@ -6,9 +6,9 @@
   </div>
 
   <div class="show-container">
-    <div class="card-product">
+    <div class="card-listing">
       <div>
-        <img src=<%= @listing.game.cover %> class="img-thum bnail" alt="game cover">
+        <img src=<%= @listing.game.cover %> class="img-thumbnail" alt="game cover">
       </div>
       <div>
         <h2><%= @listing.game.name %></h2>
@@ -20,8 +20,8 @@
       </div>
     </div>
 
-    <div class="card-product-seller">
-      <h4>Seller Profile</h4>
+    <div class="card-listing-seller">
+      <h3>Seller Profile</h3>
         <%# <%= @listing.user_id.cla %>
         <p>name: <%= @listing.user.name %></p>
         <p>rating: <% (@listing.user.rating).times do %>
@@ -35,10 +35,10 @@
     </div>
   </div>
 
-  <div class="card-product">
-
-    <h4>Buy Form</h4>
-
-
+  <div class="card-listing">
+    <br>
+    <h4>Rent This Game</h4>
+    <%= render 'listings/form' %>
+    <br>
   </div>
 </div>

@@ -5,7 +5,7 @@
       <div class="banner">
         <h1>Welcome to GameVault</h1>
         <h3>Discover a New Way to Play</h3>
-        <a href="#" class="banner-btn">Join Today</a>
+        <%= link_to "Join Today", new_user_session_path, class: "banner-btn" %>
       </div>
     </header>
 
@@ -53,7 +53,7 @@
         <a href="#" class="filter-nav-link" data-type="rpg">RPG</a>
         <a href="#" class="filter-nav-link" data-type="sports">Sports</a>
         <a href="#" class="filter-nav-link" data-type="strategy">Strategy</a>
-        <a href="#" class="active" data-type="view-all">View all</a>
+        <%= link_to "View all", listings_path, class: "active", data: { type: "view-all" } %>
       </div>
 
         <div class="filter-items">
@@ -75,7 +75,7 @@
         <a href="#" class="filter-nav-link" data-type="nintendo">Nintendo</a>
         <a href="#" class="filter-nav-link" data-type="pc">PC</a>
         <a href="#" class="filter-nav-link" data-type="mobile">Mobile</a>
-        <a href="#" class="active" data-type="all-platforms">All Platforms</a>
+        <%= link_to "All Platforms", listings_path, class: "active", data: { type: "all-platforms" } %>
       </div>
 
       <div class="filter-items">
