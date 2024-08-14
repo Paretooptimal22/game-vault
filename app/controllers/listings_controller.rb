@@ -7,4 +7,8 @@ class ListingsController < ApplicationController
     @listing = Listing.find(params[:id])
     @rental = Rental.new
   end
+
+  def new
+    @listing = Listing.new
+  end
 end
