@@ -31,7 +31,10 @@
           <li class="d-flex justify-content-between list-group-item">
             <div class="list-left">
               <strong>Due:</strong> <%= rental.end_date %>
-              <strong>Total: ￥</strong> <%= rental.listing.price.round(2) %>
+              <strong>Rental days:</strong> <%= ((rental.end_date - rental.start_date).to_i) +1%>
+              <%# <strong>Total: ￥</strong> <%= ((((rental.end_date - rental.start_date).to_i) +1)*rental.listing.price).round(2) %>
+              <strong>Total:</strong> <%= number_to_currency(((((rental.end_date - rental.start_date).to_i) +1)*rental.listing.price) , { unit: '¥', precision: 2 }) %>
+
             </div>
             <div class="list-right">
               <%= link_to rental.listing.game.name, listing_path(rental.listing) %>
