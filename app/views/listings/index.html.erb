@@ -8,7 +8,8 @@
           <%= image_tag listing.game.cover %>
           <div class="card-product-infos">
             <h2><%= listing.game.name %></h2>
-            <p> <%= listing.game.genres %> <strong><%= listing.game.aggregate_rating %></strong></p>
+            <p> <%= listing.game.genres %></p>
+            <p><strong> Rating: <%= (listing.game.aggregate_rating).round(1) %></strong></p>
           </div>
           <%= link_to '', listing_path(listing) , class: 'card-product-info-link' %>
         </div>
