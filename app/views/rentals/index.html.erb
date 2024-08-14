@@ -4,7 +4,7 @@
     <div class="listings-container col-6">
       <h2 class="text-center">My Pending Listings</h2>
       <ul class="list-group">
-        <% @rentals.each do |rental| %>
+        <% @rentals.reverse.each do |rental| %>
           <li class="d-flex justify-content-between list-group-item">
             <div class="list-left">
               <%= rental.user.name %>
@@ -27,7 +27,7 @@
     <div class="rentals-container col-6">
       <h2 class="text-center">My Ongoing Rentals</h2>
       <ul class="list-group">
-        <% @rentals.each do |rental| %>
+        <% @rentals.reverse.each do |rental| %>
           <li class="d-flex justify-content-between list-group-item">
             <div class="list-left">
               <%= rental.end_date %>
