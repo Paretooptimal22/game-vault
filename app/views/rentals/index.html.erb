@@ -4,18 +4,18 @@
     <div class="listings-container col-6">
       <h2 class="text-center">My Pending Listings</h2>
       <ul class="list-group">
-        <% @rentals.reverse.each do |rental| %>
+        <% @listings.reverse.each do |listing| %>
           <li class="d-flex justify-content-between list-group-item">
             <div class="list-left">
-              <%= rental.user.name %>
-              <%= rental.user.rating %>
+              <%= listing.game.name %>
+              <%= listing.price.round(2) %>
             </div>
             <div class="list-right">
-              <%= link_to "Reject", rental_path(rental), data: {
+              <%= link_to "Reject", listings_path, data: {
                         turbo_method: :delete,
                         turbo_confirm: "Are you sure?"
                       } %>
-              <%= link_to "Accept", rental_path(rental), data: {
+              <%= link_to "Accept", listings_path, data: {
                         turbo_method: :delete,
                         turbo_confirm: "Are you sure?"
                       } %>

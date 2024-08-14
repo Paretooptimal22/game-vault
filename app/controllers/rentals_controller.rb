@@ -1,8 +1,9 @@
 class RentalsController < ApplicationController
-   def index
+  def index
     @rentals = Rental.all
+    @listings = Listing.where(user: current_user)
   end
-  
+
   def new
     @rental = Rental.new
   end
@@ -27,7 +28,7 @@ class RentalsController < ApplicationController
 
     redirect_to rentals_path, status: :see_other
   end
-  
+
   private
 
   def rental_params
