@@ -1,20 +1,21 @@
 /* Footer */
 footer {
   width: 100%;
+  margin-top: 30rem;
 
   .footer-content {
      display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: #fff;
-    padding: 2rem 0;
+    background-color: $color-secondary;
+    padding: .5rem 0;
 
     h3 {
       font-family: $color-primary;
       font-size: 3rem;
-      color: #2f9e44;
-      margin-bottom: 2rem;
+      color: $color-primary;
+      margin-bottom: 1.5rem;
     }
   }
 
