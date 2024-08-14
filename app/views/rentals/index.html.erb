@@ -11,19 +11,19 @@
               <%= listing.price.round(2) %>
             </div>
             <div class="list-right">
-              <%= link_to "Reject", listings_path, data: {
-                        turbo_method: :delete,
-                        turbo_confirm: "Are you sure?"
-                      } %>
-              <%= link_to "Accept", listings_path, data: {
-                        turbo_method: :delete,
-                        turbo_confirm: "Are you sure?"
-                      } %>
+              <%= form_with url: listing_path(listing), method: :delete, data: { turbo_confirm: "Are you sure you want to reject this listing?" } do %>
+              <%= submit_tag 'Reject', class: 'btn btn-danger' %>
+            <% end %>
+              <%= form_with url: update_status_listing_path(listing), method: :patch, local: true do %>
+                <%= hidden_field_tag :status, 'approved' %>
+                <%= submit_tag 'Accept', class: 'btn btn-success' %>
+              <% end %>
             </div>
           </li>
         <% end %>
       </ul>
     </div>
+
     <div class="rentals-container col-6">
       <h2 class="text-center">My Ongoing Rentals</h2>
       <ul class="list-group">
@@ -32,6 +32,7 @@
             <div class="list-left">
               <strong>Due:</strong> <%= rental.end_date %>
               <strong>Total: ￥</strong> <%= rental.listing.price.round(2) %>
+              <%= rental.status.capitalize %>
             </div>
             <div class="list-right">
               <%= link_to rental.listing.game.name, listing_path(rental.listing) %>
