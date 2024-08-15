@@ -18,8 +18,21 @@
 
   <div class="card-listing">
     <div>
-      <h3>Seller Profile</h3>
+      <h2>User Offers</h2>
           <%# <%= @listing.user_id.cla %>
+      <div class="card-user">
+        <% @listings.each do |listing| %>
+          <h3><%= listing.user.name %></h3>
+          <p>rating: <% (listing.user.rating).times do %>
+            <i class="fas fa-star"></i>
+          <% end %>
+          <% (5 - listing.user.rating).times do %>
+            <i class="far fa-star"></i>
+          <% end %>
+          <%# <p>Price: ¥<%= (@listing.price).round(1) / day</p> %>
+          </p>
+        <% end %>
+      </div>
       <p>name: <%= @listing.user.name %></p>
       <p>rating: <% (@listing.user.rating).times do %>
         <i class="fas fa-star"></i>
@@ -30,6 +43,9 @@
       <%# <p>Price: ¥<%= (@listing.price).round(1) / day</p> %>
       </p>
     </div>
+  </div>
+
+  <div class="card">
     <div>
       <%= render 'listings/form' %>
     </div>
