@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   end
 
   resources :rentals, only: [:index, :update, :destroy]
+
+  resources :games, only: [:index]
 end

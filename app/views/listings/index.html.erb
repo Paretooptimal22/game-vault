@@ -1,5 +1,15 @@
 <div class="container">
   <h1 class="text-center">Video Games<h1>
+
+    <%= form_with url: games_path, method: :get, local: true do %>
+      <%= text_field_tag :query, params[:query], placeholder: "Search games..." %>
+      <%= submit_tag "Search" %>
+    <% end %>
+
+    <% @games.each do |game| %>
+      <%= render partial: "game", locals: { game: game } %>
+    <% end %>
+
   <ul class="cards list-group list-group-flush row row-cols-3">
     <% @listings.each do |listing| %>
       <li class="list-group-item col-12">
