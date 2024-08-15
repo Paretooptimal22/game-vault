@@ -9,7 +9,7 @@ export default class extends Controller {
 
   update() {
     // const pricePerDay = parseInt(this.priceValue, 10);
-    const pricePerDay = parseFloat(this.priceValue).toFixed(2);
+    const pricePerDay = parseInt(this.priceValue);
     // make sure the user has chosen a start date and end date
     if (
       this.start_dateTarget.value !== "" &&
