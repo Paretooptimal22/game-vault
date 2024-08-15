@@ -2,6 +2,6 @@
 
 <%= simple_form_for @listing do |f| %>
   <%= f.input :price %>
-  <%= f.association :games %>
+  <%= f.association :game, collection: Game.all %>
   <%= f.button :submit %>
 <% end %>
