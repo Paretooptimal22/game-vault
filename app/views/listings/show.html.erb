@@ -2,36 +2,42 @@
   <div class="show-container">
     <div class="card-listing">
       <div>
-        <img src=<%= @listing.game.cover %> class="img-thumbnail" alt="game cover">
+        <img src=<%= @game.cover %> class="img-thumbnail" alt="game cover">
       </div>
       <div>
-        <h2><%= @listing.game.name %></h2>
-        <p>Age rating: <%= @listing.game.age_rating %></p>
-        <p>Game Rating: <%= (@listing.game.aggregate_rating).round(0) %></p>
-        <p>Genres: <%= @listing.game.genres %></p>
-        <p>Platforms: <%= @listing.game.platforms %></p>
-        <p>Website  <a href="<%= @listing.game.website %>">link</a></p>
+        <h2><%= @game.name %></h2>
+        <p>Age rating: <%= @game.age_rating %></p>
+        <p>Game Rating: <%= (@game.aggregate_rating).round(0) %></p>
+        <p>Genres: <%= @game.genres %></p>
+        <p>Platforms: <%= @game.platforms %></p>
+        <p>Website  <a href="<%= @game.website %>">link</a></p>
       </div>
     </div>
   </div>
-
-
   <div class="card-listing">
     <div>
-      <h3>Seller Profile</h3>
-          <%# <%= @listing.user_id.cla %>
-      <p>name: <%= @listing.user.name %></p>
-      <p>rating: <% (@listing.user.rating).times do %>
-        <i class="fas fa-star"></i>
+      <h2>User Offers</h2>
+      <%# <%= @listing.user_id.cla %>
+      <div class="card-user">
+        <% @listings.each do |listing| %>
+          <h3><%= listing.user.name %></h3>
+          <p>rating: <% (listing.user.rating).times do %>
+              <i class="fas fa-star"></i>
+            <% end %>
+            <% (5 - listing.user.rating).times do %>
+              <i class="far fa-star"></i>
+            <% end %>
+            <%# <p>Price: ¥<%= (@listing.price).round(1) / day</p> %>
+            <div class="card">
+              <div>
+                <%= render 'listings/form', listing: listing %>
+              </div>
+            </div>
+          </p>
         <% end %>
-        <% (5 - @listing.user.rating).times do %>
-          <i class="far fa-star"></i>
-        <% end %>
+      </div>
       <%# <p>Price: ¥<%= (@listing.price).round(1) / day</p> %>
-      </p>
-    </div>
-    <div>
-      <%= render 'listings/form' %>
-    </div>
+    </p>
   </div>
+</div>
 </div>

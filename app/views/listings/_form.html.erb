@@ -4,9 +4,9 @@
   <%= f.button :submit %>
 <% end %>
 -->
-<div data-controller="rental-price" data-rental-price-price-value="<%= @listing.price %>" class="mt-5 border p-3 rounded">
-  <p class='fw-bold fs-3'>¥<%= @listing.price.round(0) %> <small class='fw-light'>per day</small></p>
-  <%= simple_form_for [@listing, @rental] do |f| %>
+<div data-controller="rental-price" data-rental-price-price-value="<%= listing.price %>" class="mt-5 border p-3 rounded">
+  <p class='fw-bold fs-3'>¥<%= listing.price.round(0) %> <small class='fw-light'>per day</small></p>
+  <%= simple_form_for [listing, @rental] do |f| %>
       <div class="d-flex">
         <!-- On change of dates, it triggers our update inside of our JS controller -->
         <%= f.input :start_date, as: :date, html5: true, input_html: { data: { rental_price_target: 'start_date', action: 'change->rental-price#update' }, min: Date.today } %>

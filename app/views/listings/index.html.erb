@@ -8,17 +8,17 @@
 <% end %>
 
   <ul class="cards list-group list-group-flush row row-cols-3">
-    <% @listings.each do |listing| %>
+    <% @games.each do |game| %>
+    <% p game %>
       <li class="list-group-item col-12">
         <div class="card-product">
-
-          <%= image_tag listing.game.cover %>
+          <%= image_tag "https:#{game.cover}" %>
           <div class="card-product-infos">
-            <h2><%= listing.game.name %></h2>
-            <p> <%= listing.game.genres %></p>
-            <p><strong> Rating: <%= (listing.game.aggregate_rating).round(1) %></strong></p>
+            <h2><%= game.name %></h2>
+            <p> <%= game.genres %></p>
+            <p><strong> Rating: <%= (game.aggregate_rating).round(1) %></strong></p>
           </div>
-          <%= link_to '', listing_path(listing) , class: 'card-product-info-link' %>
+          <%= link_to '', listing_path(game) , class: 'card-product-info-link' %>
         </div>
       </li>
     <% end %>
