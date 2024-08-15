@@ -1,11 +1,11 @@
 <div class="container">
 
-  <h1 class="text-center">Video Games<h1>
-    <%= form_with url: listings_path, method: :get, local: true do %>
-  <%= label_tag :query, "Search Listings by Game Genres, Platforms, or Name" %>
-  <%= text_field_tag :query, params[:query], placeholder: "Type a keyword", class: "form-control" %>
-  <%= submit_tag "Search" %>
-<% end %>
+  <h1 class="text-center">Video Games</h1>
+  <%= form_with url: games_path, method: :get, local: true do %>
+    <%= label_tag :query, "Search Listings by Game Genres, Platforms, or Name" %>
+    <%= text_field_tag :query, params[:query], placeholder: "Type a keyword", class: "form-control" %>
+    <%= submit_tag "Search" %>
+  <% end %>
 
   <ul class="cards list-group list-group-flush row row-cols-3">
     <% @games.each do |game| %>
@@ -18,7 +18,7 @@
             <p> <%= game.genres %></p>
             <p><strong> Rating: <%= (game.aggregate_rating).round(1) %></strong></p>
           </div>
-          <%= link_to '', listing_path(game) , class: 'card-product-info-link' %>
+          <%= link_to '', game_path(game) , class: 'card-product-info-link' %>
         </div>
       </li>
     <% end %>

@@ -19,7 +19,7 @@
       <h2>User Offers</h2>
       <%# <%= @listing.user_id.cla %>
       <div class="card-user">
-        <% @listings.each do |listing| %>
+        <% @game.listings.each do |listing| %>
           <h3><%= listing.user.name %></h3>
           <p>rating: <% (listing.user.rating).times do %>
               <i class="fas fa-star"></i>
