@@ -1,0 +1,43 @@
+<div>
+  <div class="show-container">
+    <div class="card-listing">
+      <div>
+        <img src=<%= @game.cover %> class="img-thumbnail" alt="game cover">
+      </div>
+      <div>
+        <h2><%= @game.name %></h2>
+        <p>Age rating: <%= @game.age_rating %></p>
+        <p>Game Rating: <%= (@game.aggregate_rating).round(0) %></p>
+        <p>Genres: <%= @game.genres %></p>
+        <p>Platforms: <%= @game.platforms %></p>
+        <p>Website  <a href="<%= @game.website %>">link</a></p>
+      </div>
+    </div>
+  </div>
+  <div class="card-listing">
+    <div>
+      <h2>User Offers</h2>
+      <%# <%= @listing.user_id.cla %>
+      <div class="card-user">
+        <% @game.listings.each do |listing| %>
+          <h3><%= listing.user.name %></h3>
+          <p>rating: <% (listing.user.rating).times do %>
+              <i class="fas fa-star"></i>
+            <% end %>
+            <% (5 - listing.user.rating).times do %>
+              <i class="far fa-star"></i>
+            <% end %>
+            <%# <p>Price: ¥<%= (@listing.price).round(1) / day</p> %>
+            <div class="card">
+              <div>
+                <%= render 'listings/form', listing: listing %>
+              </div>
+            </div>
+          </p>
+        <% end %>
+      </div>
+      <%# <p>Price: ¥<%= (@listing.price).round(1) / day</p> %>
+    </p>
+  </div>
+</div>
+</div>
