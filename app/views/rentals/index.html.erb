@@ -8,7 +8,7 @@
           <li class="d-flex justify-content-between list-group-item">
             <div class="list-left">
               <%= listing.game.name %>
-              <%= listing.price.round(2) %>
+              <%= listing.price.round(0) %>
             </div>
             <div class="list-right">
               <%= link_to "Reject", listings_path, data: {
@@ -32,8 +32,7 @@
             <div class="list-left">
               <strong>Due:</strong> <%= rental.end_date %>
               <strong>Rental days:</strong> <%= ((rental.end_date - rental.start_date).to_i) +1%>
-              <%# <strong>Total: ￥</strong> <%= ((((rental.end_date - rental.start_date).to_i) +1)*rental.listing.price).round(2) %>
-              <strong>Total:</strong> <%= number_to_currency(((((rental.end_date - rental.start_date).to_i) +1)*rental.listing.price) , { unit: '¥', precision: 2 }) %>
+              <strong>Total:</strong> <%= number_to_currency(((((rental.end_date - rental.start_date).to_i) +1)*rental.listing.price) , { unit: '¥', precision: 0 }) %>
 
             </div>
             <div class="list-right">
