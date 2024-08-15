@@ -1,13 +1,16 @@
 class ListingsController < ApplicationController
   def index
-    @rentals = Rental.all
-    @listings = Rental.where(@rentals.each { |rental| rental.status.pending? })
-    # @listings = @listings.where(@listings.each { |listing| listing.status != listing.approved })
+    @rentals = Rental.where.not(status: :active)
+    @games = []
+    @rentals.each do |rental|
+      @games << rental.listing.game
+    end
+    @games = @games.uniq
   end
 
   def show
-    @listings = Listing.all
-    @listing = Listing.find(params[:id])
+    @game = Game.find(params[:id])
+    @listings = @game.listings
     @rental = Rental.new
   end
 
