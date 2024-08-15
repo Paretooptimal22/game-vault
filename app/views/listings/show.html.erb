@@ -13,26 +13,25 @@
         <p>Website  <a href="<%= @listing.game.website %>">link</a></p>
       </div>
     </div>
-
-    <div class="card-listing-seller">
-      <h3>Seller Profile</h3>
-        <%# <%= @listing.user_id.cla %>
-        <p>name: <%= @listing.user.name %></p>
-        <p>rating: <% (@listing.user.rating).times do %>
-          <i class="fas fa-star"></i>
-          <% end %>
-          <% (5 - @listing.user.rating).times do %>
-            <i class="far fa-star"></i>
-          <% end %>
-          <p>Price: ¥<%= (@listing.price).round(1) %></p>
-        </p>
-    </div>
   </div>
 
+
   <div class="card-listing">
-    <br>
-    <h4>Rent This Game</h4>
-    <%= render 'listings/form' %>
-    <br>
+    <div>
+      <h3>Seller Profile</h3>
+          <%# <%= @listing.user_id.cla %>
+      <p>name: <%= @listing.user.name %></p>
+      <p>rating: <% (@listing.user.rating).times do %>
+        <i class="fas fa-star"></i>
+        <% end %>
+        <% (5 - @listing.user.rating).times do %>
+          <i class="far fa-star"></i>
+        <% end %>
+      <%# <p>Price: ¥<%= (@listing.price).round(1) / day</p> %>
+      </p>
+    </div>
+    <div>
+      <%= render 'listings/form' %>
+    </div>
   </div>
 </div>
