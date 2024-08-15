@@ -78,7 +78,7 @@ end
     listing: listing,
     start_date: rand(1..5).week.ago,
     end_date: rand(1..5).week.from_now,
-    status: [true, false].sample
+    status: Rental.statuses.keys.sample
   )
 end
 
