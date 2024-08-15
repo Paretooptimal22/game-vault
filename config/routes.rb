@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   resources :listings, except: [:edit, :update] do
     resources :rentals, only: [:create]
   end
-
+  
   resources :rentals, only: [:index, :update, :destroy]
 end

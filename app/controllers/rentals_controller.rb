@@ -21,6 +21,15 @@ class RentalsController < ApplicationController
     end
   end
 
+  def update
+    @rental = Rental.find(params[:id])
+    @rental.update(rental_params)
+    if @rental.update(rental_params)
+      redirect_to rentals_path, status: :see_other
+    else
+      render 'listings/show', status: :unprocessable_entity
+    end
+  end
 
   def destroy
     @rental = Rental.find(params[:id])
