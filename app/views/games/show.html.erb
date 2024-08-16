@@ -1,32 +1,37 @@
-<div>
-  <div class="show-container">
-    <div class="card-listing">
-      <div>
-        <%= image_tag @game.cover, class: "img-thumbnail", alt: "game cover" %>
+ <div class="show-container">
+    <%= image_tag @game.cover, class: "game-img", alt: "game cover" %>
+    <div class="game-text-content">
+      <div class="game-info">
+        <h1><%= @game.name %></h1>
+          <p><span>Age Rating:</span> <%= @game.age_rating %></p>
+          <p><span>Game Rating:</span> <%= (@game.aggregate_rating).round(0) %></p>
+          <p><span>Genres:</span> <%= @game.genres %></p>
+          <p><span>Platforms:</span> <%= @game.platforms %></p>
+          <p><span>Website:</span> <a href="<%= @game.website %>">Official website</a></p>
       </div>
-      <div>
-        <h2><%= @game.name %></h2>
-        <p>Age rating: <%= @game.age_rating %></p>
-        <p>Game Rating: <%= (@game.aggregate_rating).round(0) %></p>
-        <p>Genres: <%= @game.genres %></p>
-        <p>Platforms: <%= @game.platforms %></p>
-        <p>Website  <a href="<%= @game.website %>">link</a></p>
+      <div class="game-description">
+        <h2>Storyline</h2>
+        <p><%= @game.storyline %></p>
+        <h2>Summary</h2>
+          <p><%= @game.summary %></p>
       </div>
-    </div>
-  </div>
-  <div class="listing-container">
-    <div>
-      <h2>User Offers</h2>
-      <%# <%= @listing.user_id.cla %>
+<div class="user-offers">
+  <div class="user-info">
+    <h2>User Offers</h2>
       <div class="card-user">
         <% @game.listings.each do |listing| %>
-          <div class="card-user-infos">
-            <%# Show dummy name for new users %>
+          <% if listing.user.rating? %>
+            <h3><%= listing.user.name %></h3>
+          <% else %>
+            <h3><%= ['Doug Berkley', 'Matthew Davies', 'Noemi Ashizuka', 'Yann Klein', 'Trouni Tiet', 'Sylvain Pierre'].sample %></h3>
+          <% end %>
+          <p>rating:
             <% if listing.user.rating? %>
               <h2><%= listing.user.name %></h2>
             <% else %>
               <h2><%= ['Doug Berkley', 'Matthew Davies', 'Noemi Ashizuka', 'Yann Klein', 'Trouni Tiet', 'Sylvain Pierre'].sample %></h2>
             <% end %>
+            <div class="booking-card">
             <%# Show rating in stars & show a default rating of 3 stars for new users %>
             <p>rating:</p>
               <% if listing.user.rating? %>
@@ -55,8 +60,8 @@
           </p>
         <% end %>
       </div>
-      <%# <p>Price: ¥<%= (@listing.price).round(1) / day</p> %>
     </p>
   </div>
-</div>
-</div>
+  </div>
+    </div>
+  </div>
