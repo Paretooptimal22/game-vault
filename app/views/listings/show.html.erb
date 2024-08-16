@@ -2,7 +2,9 @@
   <div class="show-container">
     <div class="card-listing">
       <div>
-        <img src=<%= @game.cover %> class="img-thumbnail" alt="game cover">
+        <%= image_tag @game.screenshots, class: "img-thumbnail", alt: "screenshot" %>
+        <%= image_tag @game.cover, class: "img-thumbnail", alt: "game cover" %>
+        <%= image_tag @game.artworks, class: "img-thumbnail", alt: "artworks" %>
       </div>
       <div>
         <h2><%= @game.name %></h2>
@@ -11,6 +13,7 @@
         <p>Genres: <%= @game.genres %></p>
         <p>Platforms: <%= @game.platforms %></p>
         <p>Website  <a href="<%= @game.website %>">link</a></p>
+        <p>Summary: <%= @game.summary %></p>
       </div>
     </div>
   </div>

@@ -27,9 +27,9 @@ request['Content-Type'] = 'application/json'
 
 # Create the request
 request.body = <<-QUERY
-  fields name, aggregated_rating, age_ratings.rating, genres.name, platforms.name, websites.url, artworks.url, cover.url;
+  fields name, aggregated_rating, age_ratings.rating, genres.name, platforms.name, websites.url, artworks.url, cover.url,  summary, screenshots.url, storyline, videos.video_id;
   where aggregated_rating > 90;
-  limit 20;
+  limit 50;
 QUERY
 
 # Send the request and parse the response
@@ -45,8 +45,14 @@ games.each do |game|
   aggregate_rating = game['aggregated_rating'] || rand(1..10)
   genres = game['genres']&.map { |g| g['name'] }&.join(', ') || Faker::Game.genre
   platforms = game['platforms']&.map { |p| p['name'] }&.join(', ') || Faker::Game.platform
-  cover = game['cover'] ? game['cover']['url'].gsub("//", "https://") : "https://i. etsystatic.com/7131434/r/il/f9b9e9/2410353563/il_fullxfull.2410353563_6sw2.jpg"
+  cover = game['cover'] ? game['cover']['url'].gsub("//", "https://") : "https://i.etsystatic.com/7131434/r/il/f9b9e9/2410353563/il_fullxfull.2410353563_6sw2.jpg"
   website = game['websites']&.first&.dig('url') || Faker::Internet.url
+  artworks = game['artworks'] ? game['artworks'][0]['url'].gsub("//", "https://") : "https://i.etsystatic.com/7131434/r/il/f9b9e9/2410353563/il_fullxfull.2410353563_6sw2.jpg"
+  screenshots = game['screenshots'] ? game['screenshots'][0]['url'].gsub("//", "https://") : "https://i.etsystatic.com/7131434/r/il/f9b9e9/2410353563/il_fullxfull.2410353563_6sw2.jpg"
+  video_id = game['video_id'] ? game['videos'][0]['video_id'].gsub("//", "https://") : "https://i.etsystatic.com/7131434/r/il/f9b9e9/2410353563/il_fullxfull.2410353563_6sw2.jpg"
+  summary = game['summary']
+  storyline = game['storyline']
+
   g = Game.create!(
     name: name,
     age_rating: age_rating,
@@ -54,7 +60,12 @@ games.each do |game|
     genres: genres,
     platforms: platforms,
     cover: cover,
-    website: website
+    website: website,
+    artworks: artworks,
+    screenshots: screenshots,
+    video_id: video_id,
+    summary: summary,
+    storyline: storyline
   )
   p g
 end
