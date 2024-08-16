@@ -22,9 +22,9 @@
 
       &:focus {
         border: 2px solid $color-accent;
+        color: #fff;
         }
     }
-
     .search-btn {
       font-family: $font-family-primary;
       color: $color-secondary;
