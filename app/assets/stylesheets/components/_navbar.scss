@@ -101,10 +101,14 @@
   letter-spacing: .1rem;
   text-transform: uppercase;
   transition: transform 0.3s;
+  text-decoration: none;
+  color: $color-secondary;
 }
 
 .navigation-btn:hover {
   transform: translateY(-.2rem);
+  color: #000;
+  background-color: #ddd;
 }
 
 .sticky .navigation-btn {

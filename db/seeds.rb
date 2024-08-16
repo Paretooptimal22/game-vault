@@ -63,10 +63,9 @@ games.each do |game|
     summary: summary,
     storyline: storyline
   )
-
 end
-#Generate 10 users with Faker
-10.times do
+# Generate 30 users with Faker
+30.times do
   user = User.create!(
     name: Faker::Internet.username(specifier: 5..10),
     email: Faker::Internet.email,
