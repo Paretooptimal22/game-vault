@@ -36,8 +36,6 @@ QUERY
 response = http.request(request)
 games = JSON.parse(response.body)
 
-p games
-
 # Create Game instances based on the API response
 games.each do |game|
   name = game['name']
@@ -49,7 +47,6 @@ games.each do |game|
   website = game['websites']&.first&.dig('url') || Faker::Internet.url
   artworks = game['artworks'] ? game['artworks'][0]['url'].gsub("//", "https://") : "https://i.etsystatic.com/7131434/r/il/f9b9e9/2410353563/il_fullxfull.2410353563_6sw2.jpg"
   screenshots = game['screenshots'] ? game['screenshots'][0]['url'].gsub("//", "https://") : "https://i.etsystatic.com/7131434/r/il/f9b9e9/2410353563/il_fullxfull.2410353563_6sw2.jpg"
-  video_id = game['video_id'] ? game['videos'][0]['video_id'].gsub("//", "https://") : "https://i.etsystatic.com/7131434/r/il/f9b9e9/2410353563/il_fullxfull.2410353563_6sw2.jpg"
   summary = game['summary']
   storyline = game['storyline']
 
@@ -63,11 +60,10 @@ games.each do |game|
     website: website,
     artworks: artworks,
     screenshots: screenshots,
-    video_id: video_id,
     summary: summary,
     storyline: storyline
   )
-  p g
+
 end
 #Generate 10 users with Faker
 10.times do
