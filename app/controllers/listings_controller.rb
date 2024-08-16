@@ -23,7 +23,7 @@ class ListingsController < ApplicationController
     @listing = Listing.new(listing_params)
     @listing.user = current_user
     if @listing.save
-      redirect_to @listing
+      redirect_to rentals_path
     else
       @games = Game.all
       render :new, status: :unprocessable_entity
