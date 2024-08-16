@@ -14,35 +14,38 @@
       </div>
     </div>
   </div>
-  <div class="card-listing">
+  <div class="listing-container">
     <div>
       <h2>User Offers</h2>
       <%# <%= @listing.user_id.cla %>
       <div class="card-user">
         <% @game.listings.each do |listing| %>
-          <%# Show dummy name for new users %>
-          <% if listing.user.rating? %>
-            <h3><%= listing.user.name %></h3>
-          <% else %>
-            <h3><%= ['Doug Berkley', 'Matthew Davies', 'Noemi Ashizuka', 'Yann Klein', 'Trouni Tiet', 'Sylvain Pierre'].sample %></h3>
-          <% end %>
-          <%# Show rating in stars & show a default rating of 3 stars for new users %>
-          <p>rating:
+          <div class="card-user-infos">
+            <%# Show dummy name for new users %>
             <% if listing.user.rating? %>
-              <% listing.user.rating.times do %>
-                <i class="fas fa-star"></i>
-              <% end %>
-              <% (5 - listing.user.rating).times do %>
-                <i class="far fa-star"></i>
-              <% end %>
+              <h2><%= listing.user.name %></h2>
             <% else %>
-              <% 3.times do %>
-                <i class="fas fa-star"></i>
-              <% end %>
-              <% 2.times do %>
-                <i class="far fa-star"></i>
-              <% end %>
+              <h2><%= ['Doug Berkley', 'Matthew Davies', 'Noemi Ashizuka', 'Yann Klein', 'Trouni Tiet', 'Sylvain Pierre'].sample %></h2>
             <% end %>
+            <%# Show rating in stars & show a default rating of 3 stars for new users %>
+            <p>rating:</p>
+              <% if listing.user.rating? %>
+                <% listing.user.rating.times do %>
+                  <i class="fas fa-star"></i>
+                <% end %>
+                <% (5 - listing.user.rating).times do %>
+                  <i class="far fa-star"></i>
+                <% end %>
+              <% else %>
+                <% 3.times do %>
+                  <i class="fas fa-star"></i>
+                <% end %>
+                <% 2.times do %>
+                  <i class="far fa-star"></i>
+                <% end %>
+              <% end %>
+          </div>
+
             <%# <p>Price: ¥<%= (@listing.price).round(1) / day</p> %>
             <div class="card">
               <div>
