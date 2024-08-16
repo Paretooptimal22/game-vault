@@ -4,18 +4,18 @@
     <div class="listings-container col-6">
       <h2 class="text-center">My Pending Listings</h2>
       <ul class="list-group">
-      <% @rentals_as_owner.reverse.each do |rental| %>
+      <% @listings.each do |listing| %>
         <li class="d-flex justify-content-between list-group-item">
           <div class="list-left">
-            <%= rental.listing.game.name %>
+            <%= listing.game.name %>
           </div>
           <div class="list-right d-flex">
-          <% if rental.pending? %>
-            <%= simple_form_for rental, method: :patch do |f| %>
+          <% if listing.rentals.each {rental.pending?} %>
+            <%= simple_form_for listing, method: :patch do |f| %>
               <%= f.input :status, as: :hidden, input_html: { value: 'approved'} %>
               <%= f.submit 'Accept', class: 'btn btn-success' %>
             <% end %>
-            <%= simple_form_for rental, method: :patch do |f| %>
+            <%= simple_form_for listing, method: :patch do |f| %>
               <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
               <%= f.submit 'Reject', class: 'btn btn-danger' %>
             <% end %>
