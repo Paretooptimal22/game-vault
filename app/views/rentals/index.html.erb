@@ -4,7 +4,7 @@
     <div class="listings-container col-6">
       <h2 class="text-center">My Pending Listings</h2>
       <ul class="list-group">
-      <% @rentals.reverse.each do |rental| %>
+      <% @rentals_as_owner.reverse.each do |rental| %>
         <li class="d-flex justify-content-between list-group-item">
           <div class="list-left">
             <%= rental.listing.game.name %>
