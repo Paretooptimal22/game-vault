@@ -20,12 +20,28 @@
       <%# <%= @listing.user_id.cla %>
       <div class="card-user">
         <% @game.listings.each do |listing| %>
-          <h3><%= listing.user.name %></h3>
-          <p>rating: <% (listing.user.rating).times do %>
-              <i class="fas fa-star"></i>
-            <% end %>
-            <% (5 - listing.user.rating).times do %>
-              <i class="far fa-star"></i>
+          <%# Show dummy name for new users %>
+          <% if listing.user.rating? %>
+            <h3><%= listing.user.name %></h3>
+          <% else %>
+            <h3>Douglas Klein</h3>
+          <% end %>
+          <%# Show rating in stars & show a default rating of 3 stars for new users %>
+          <p>rating:
+            <% if listing.user.rating? %>
+              <% listing.user.rating.times do %>
+                <i class="fas fa-star"></i>
+              <% end %>
+              <% (5 - listing.user.rating).times do %>
+                <i class="far fa-star"></i>
+              <% end %>
+            <% else %>
+              <% 3.times do %>
+                <i class="fas fa-star"></i>
+              <% end %>
+              <% 2.times do %>
+                <i class="far fa-star"></i>
+              <% end %>
             <% end %>
             <%# <p>Price: ¥<%= (@listing.price).round(1) / day</p> %>
             <div class="card">

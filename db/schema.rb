@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_15_072211) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_15_094240) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -28,6 +28,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_15_072211) do
     t.text "screenshots"
     t.text "storyline"
     t.text "summary"
+    t.text "video_id"
   end
 
   create_table "listings", force: :cascade do |t|
