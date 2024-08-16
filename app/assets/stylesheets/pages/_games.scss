@@ -1,0 +1,46 @@
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin: 3rem 0;
+
+  .search-items {
+    display: flex;
+
+    .search-field {
+      font-size: 1.4rem;
+      padding: 0 1rem;
+      width: 30rem;
+      font-family: $font-family-primary;
+      background-color: #212529;
+      border: 1px solid #adb5bd;
+
+      &::placeholder {
+        color: $color-secondary;
+      }
+
+      &:focus {
+        border: 2px solid $color-accent;
+        }
+    }
+
+    .search-btn {
+      font-family: $font-family-primary;
+      color: $color-secondary;
+      background-color: #212529;
+      font-size: 2rem;
+      padding: 1rem 2rem;
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: #000;
+        background-color: #adb5bd;
+      }
+    }
+  }
+  .page-title {
+    font-size: 5rem;
+    font-weight: 500;
+  }
+}
