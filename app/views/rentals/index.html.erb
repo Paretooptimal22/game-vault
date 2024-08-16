@@ -2,15 +2,16 @@
   <h1 class="text-center">Rentals</h1>
   <main class="row row-cols-2">
     <div class="listings-container col-6">
-      <h2 class="text-center">My Pending Listings</h2>
+      <h2 class="text-center">Listings</h2>
       <ul class="list-group">
-      <% @listings.each do |listing| %>
+      <% @rentals_as_owner.each do |rental| %>
         <li class="d-flex justify-content-between list-group-item">
           <div class="list-left">
-            <%= listing.game.name %>
+            <%= rental.listing.game.name %>
+            <%= rental.listing.price %>
           </div>
           <div class="list-right d-flex">
-          <% if listing.rentals.each {rental.pending?} %>
+          <% if rental.listing.rentals.each {rental.pending?} %>
             <%= simple_form_for listing, method: :patch do |f| %>
               <%= f.input :status, as: :hidden, input_html: { value: 'approved'} %>
               <%= f.submit 'Accept', class: 'btn btn-success' %>
@@ -28,7 +29,7 @@
       </ul>
     </div>
     <div class="rentals-container col-6">
-      <h2 class="text-center">My Ongoing Rentals</h2>
+      <h2 class="text-center">Rentals</h2>
       <ul class="list-group">
         <% @rentals.reverse.each do |rental| %>
           <li class="d-flex justify-content-between list-group-item">
@@ -36,10 +37,9 @@
               <strong>Due:</strong> <%= rental.end_date %>
               <strong>Rental days:</strong> <%= ((rental.end_date - rental.start_date).to_i) +1%>
               <strong>Total:</strong> <%= number_to_currency(((((rental.end_date - rental.start_date).to_i) +1)*rental.listing.price) , { unit: '¥', precision: 0 }) %>
-
             </div>
             <div class="list-right">
-              <%= link_to rental.listing.game.name, listing_path(rental.listing) %>
+              <%= link_to rental.listing.game.name, game_path(rental.listing.game) %>
             </div>
           </li>
         <% end %>
