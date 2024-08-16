@@ -1,0 +1,31 @@
+.listings-container, .rentals-container {
+  margin-bottom: 1.5rem;
+}
+
+.list-group-item {
+  border-radius: 0.375rem;
+}
+
+.list-left, .list-right {
+  flex: 1;
+}
+
+.list-right {
+  text-align: right;
+}
+
+.btn-sm {
+  font-size: 0.875rem;
+}
+
+.bg-info {
+  background-color: #17a2b8 !important;
+}
+
+.text-white {
+  color: #fff !important;
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}
