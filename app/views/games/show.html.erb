@@ -25,14 +25,6 @@
           <% else %>
             <h3><%= ['Doug Berkley', 'Matthew Davies', 'Noemi Ashizuka', 'Yann Klein', 'Trouni Tiet', 'Sylvain Pierre'].sample %></h3>
           <% end %>
-          <p>rating:
-            <% if listing.user.rating? %>
-              <h2><%= listing.user.name %></h2>
-            <% else %>
-              <h2><%= ['Doug Berkley', 'Matthew Davies', 'Noemi Ashizuka', 'Yann Klein', 'Trouni Tiet', 'Sylvain Pierre'].sample %></h2>
-            <% end %>
-            <div class="booking-card">
-            <%# Show rating in stars & show a default rating of 3 stars for new users %>
             <p>rating:</p>
               <% if listing.user.rating? %>
                 <% listing.user.rating.times do %>
@@ -50,10 +42,7 @@
                 <% end %>
               <% end %>
           </div>
-
-            <%# <p>Price: ¥<%= (@listing.price).round(1) / day</p> %>
-            <div class="card">
-              <div>
+            <div class="booking-card">
                 <%= render 'listings/form', listing: listing %>
               </div>
             </div>
@@ -62,6 +51,4 @@
       </div>
     </p>
   </div>
-  </div>
-    </div>
-  </div>
+</div>
