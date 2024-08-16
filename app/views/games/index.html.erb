@@ -1,15 +1,10 @@
 <div class="container">
-
-  <div class="container mt-3">
-    <h1 class="text-center">Video Games</h1>
+  <h1 class="text-center">Video Games</h1>
     <%= form_with url: games_path, method: :get, local: true do %>
       <%= label_tag :query, "Search Listings by Game Genres, Platforms, or Name" %>
       <%= text_field_tag :query, params[:query], placeholder: "Type a keyword", class: "form-control" %>
       <%= submit_tag "Search" %>
     <% end %>
-  </div>
-
-  <div class="container mt-3">
     <ul class="cards list-group list-group-flush row row-cols-3">
     <% @games.each do |game| %>
     <% p game %>
@@ -26,6 +21,4 @@
       </li>
     <% end %>
   </ul>
-  </div>
-
 </div>
