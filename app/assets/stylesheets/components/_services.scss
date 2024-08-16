@@ -36,8 +36,8 @@
 
       .service {
         width: 28rem;
-        height: 35rem;
-        margin: 0 2.5rem;
+        height: 100%;
+        margin: 1rem 2rem;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -67,7 +67,7 @@
       }
 
       .service p {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         text-align: center;
         color: $color-text-muted-light;
       }
