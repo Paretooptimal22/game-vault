@@ -24,7 +24,7 @@
           <% if listing.user.rating? %>
             <h3><%= listing.user.name %></h3>
           <% else %>
-            <h3>Douglas Klein</h3>
+            <h3><%= ['Doug Berkley', 'Matthew Davies', 'Noemi Ashizuka', 'Yann Klein', 'Trouni Tiet', 'Sylvain Pierre'].sample %></h3>
           <% end %>
           <%# Show rating in stars & show a default rating of 3 stars for new users %>
           <p>rating:
