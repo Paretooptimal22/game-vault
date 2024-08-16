@@ -4,44 +4,46 @@
   top: 18%;
   left: 20%;
   z-index: 4;
-}
 
-.banner h1 {
-  font-family: "Mooli",cursive;
-  font-size: 11rem;
-  color: #fff;
-  /* text-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.3); */
-}
+  h1 {
+    font-family: $font-family-logo;
+    font-size: 11rem;
+    color: $color-secondary;
+    /* text-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.3); */
+  }
 
-.banner h3 {
-  font-size: 2rem;
-  font-weight: 300;
-  text-transform: uppercase;
-  color: #fff;
-  /* text-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1); */
-  margin: 0 0 3rem 1rem;
-}
 
-.banner .banner-btn {
-  padding: 1.5rem;
-  width: 15rem;
-  height: 5rem;
-  background-color: #2f9e44;
-  border: none;
-  border-radius: 3rem;
-  font-size: 1.6rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: .1rem;
-  color: #fff;
-  margin-left: 1rem;
-  cursor: pointer;
-  transition: transform 0.3s;
-  text-decoration: none;
-  /* box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1); */
-  /* z-index: 5; */
-}
+  h3 {
+    font-size: 2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: $color-secondary;
+    /* text-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1); */
+    margin: 0 0 3rem 3rem;
+  }
 
-.banner .banner-btn:hover {
-  transform: translateY(-.2rem) !important;
+  .banner-btn {
+    display: inline-block;
+    padding: 1.5rem 2rem;
+    background-color: $color-primary;
+    border-radius: 3rem;
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    color: $color-secondary;
+    margin-top: 3rem;
+    margin-left: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    /* box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1); */
+    transition: all 0.3s;
+
+    &:hover {
+      transform: translateY(-0.2rem);
+      background-color: $color-accent;
+      color: #000;
+    }
+  }
 }
