@@ -1,16 +1,16 @@
 .show-container{
   display: flex;
-}
-// change class names
-.card-listing {
   overflow: hidden;
   height: auto;
-  width: 55%;
+  width: 85%;
   font-family: $font-family-primary;
   text-align: center;
   background: white;
   // box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin: 40px 30px;
+  max-width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3rem;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -18,6 +18,61 @@
   border-radius: 1.5px;
   box-shadow: 2px 2px 2px rgb(179, 179, 179);
 }
+
+.show-container p{
+  font-size: medium;
+}
+
+.card-listing-title{
+  color: $color-text-dark;
+  overflow: hidden;
+  height: auto;
+  width: 100rem;
+  font-family: $font-family-primary;
+  text-align: center;
+  flex-direction: column;
+}
+
+.card-listing-title h2{
+  color: $gray;
+  font-size: 48px;
+}
+
+.card-listing-images {
+  flex-direction: row;
+  width: auto;
+  height: auto;
+  padding-top: 20px;
+}
+
+.card-listing-images img {
+  width: 140px;
+  height: auto;
+  margin-right: 8px;
+}
+
+.card-listing-game {
+  overflow: hidden;
+  //height: auto;
+  // width: 85%;
+  font-family: $font-family-primary;
+  position: relative;
+  text-align: center;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+.card-listing-game img{
+
+  width: 50px;
+  height: auto;
+}
+
+// .age-rating img{
+//   width: 48px;
+//   height: auto;
+// }
 
 .card-listing-seller{
   height: auto;

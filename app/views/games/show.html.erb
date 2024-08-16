@@ -1,20 +1,29 @@
 <div>
   <div class="show-container">
-    <div class="card-listing">
-      <div>
-        <%= image_tag @game.cover, class: "img-thumbnail", alt: "game cover" %>
-      </div>
+    <div class="card-listing-title">
       <div>
         <h2><%= @game.name %></h2>
-        <p>Age rating: <%= @game.age_rating %></p>
-        <p>Game Rating: <%= (@game.aggregate_rating).round(0) %></p>
-        <p>Genres: <%= @game.genres %></p>
-        <p>Platforms: <%= @game.platforms %></p>
-        <p>Website  <a href="<%= @game.website %>">link</a></p>
+      </div>
+      <div class="card-listing-images">
+        <%= image_tag @game.cover, alt: "game cover" %>
+        <%= image_tag @game.screenshots, alt: "game screenshot" %>
+        <%= image_tag @game.artworks, alt: "game artwork" %>
       </div>
     </div>
+    <div class="card-listing-game">
+
+      <div>
+        <p><b>Game Rating:</b> <%= (@game.aggregate_rating).round(0) %>/100</p>
+        <p><b>Genres:</b> <%= @game.genres %></p>
+        <p><b>Platforms:</b> <%= @game.platforms %></p>
+        <p><b>Website:</b>  <a href="<%= @game.website %>">link</a></p>
+        <p><b>Summary:</b>  <%= @game.summary %></p>
+        <%= image_tag("ESRB_Rating_Pending.jpeg", alt: "Everyone 10+")  %>
+      </div>
+    </div>
+
   </div>
-  <div class="card-listing">
+  <div class="card-listing-seller">
     <div>
       <h2>User Offers</h2>
       <%# <%= @listing.user_id.cla %>
